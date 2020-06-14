@@ -15,6 +15,14 @@
     <div class="page-header">
         {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'post_unpub' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+        <small>
+            <p class="top-menu">Hello, {{ user.username }}!
+                <a href="/admin/" class="small_icon">[Admin]</a>
+                <a href="{% url 'logout' %}" class="small_icon">[Log out]</a>
+        </small></p>
+        {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
         {% endif %}
         <h1><a href="/">D-Lyrium's Blog</a></h1>
     </div>
