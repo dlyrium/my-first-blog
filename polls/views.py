@@ -12,14 +12,11 @@ PUBLISHED_ONLY = Question.objects.filter(pub_date__lte=timezone.now())
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
+    model = Question
 
     def get_queryset(self):
-        valid_questions = []
-        for question in PUBLISHED_ONLY:
-            if question.choice_set.all():
-                valid_questions.append(question)
-        # .order_by('-pub_date')[:5]
-        return valid_questions[:5]
+
+        return super().get_queryset().filter(pub_date__lte=timezone.now(), choice__isnull=False).distinct().order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
