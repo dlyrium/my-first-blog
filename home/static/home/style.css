@@ -1,43 +1,77 @@
-.page-header {
+/* HEADER */
+header {
+    height: 125px;
+    display: flex;
+    flex-direction: row;
     background-color: #2416f0;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
-
-.blog {
-    color: #C25100;
-}
-
-.polls {
-    color: #0d5322;
-}
-
-a {
-    color: steelblue
-}
-
-.small-icon {
-    font-size: 10px;
-    color: cyan;
-}
-
-.page-header h1, .page-header h1 a, .page-header h1 a:active {
+header h1, header h1 a {
     color: darkcyan;
     font-size: 36pt;
     text-decoration: none;
 }
+.title-bar {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.user-bar {
+    background: rgb(139, 199, 255);
+    border: 1px solid rgb(23, 7, 170);
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    color: #000000;
+    float: right;
+    font-size: 12pt;
+    margin: 0 2px 0 0;
+    padding: 0;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    right: 5;
+}
+.user-bar li {
+    padding: 0 5px;
+}
+.post-controls {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: absolute;
+    bottom: 0;
+    right: 5;
+}
 
+/* Links */
+.blog {
+    color: #C25100;
+}
+.polls {
+    color: #0d5322;
+}
+a {
+    color: steelblue;
+}
+section {
+    border: 1px solid blue;
+    margin: 5px;
+}
+
+/* GENERAL */
 .content {
     margin-left: 40px;
 }
-
 h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
 }
-
-.top-menu, .top-menu:hover {
-    color: #ffffff;
-    float: right;
-    font-size: 12pt;
-    margin-right: 20px;
+hr {
+    border-top: 1px solid blue;
 }

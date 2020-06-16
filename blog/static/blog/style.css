@@ -1,60 +1,110 @@
-.page-header {
+/* HEADER */
+header {
+    height: 125px;
+    display: flex;
+    flex-direction: row;
     background-color: #C25100;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
-
-.page-header h1, .page-header h1 a, .page-header h1 a:active .page-header a {
+header h1, header h1 a {
     color: #f0a90f;
     font-size: 36pt;
     text-decoration: none;
 }
-
-a {
-    color: #f0a90f;
+.title-bar {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-
-.top-menu, .top-menu:hover {
+.user-bar {
+    background: rgb(182, 108, 82);
+    border: 1px solid orangered;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
     color: #ffffff;
     float: right;
     font-size: 12pt;
-    margin-right: 20px;
+    margin: 0 2px 0 0;
+    padding: 0;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    right: 5;
+}
+.user-bar li {
+    padding: 0 5px;
+}
+.post-controls {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    position: absolute;
+    bottom: 0;
+    right: 5;
 }
 
-.small_icon, .small-icon a {
-    font-size: 10px;
-    color: orange;
+/* CONTENT */
+.post-form textarea, .post-form input {
+    width: 100%;
 }
-
-h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+.post {
+    padding: 10px 10px 50px 10px;
+    font-size: 14px;
 }
-
+.post-detail {
+    padding: 10px 10px 50px 10px;
+    font-size: 14px;
+    border: 1px solid orangered;
+}
+.post h2 a, .post h2 a:visited {
+    color: #000000;
+}
+.comment-section {
+    border: 1px solid orangered;
+    background-color: rgb(255, 235, 183);
+    margin-bottom: 0px;
+    padding: 10px 10px 10px 10px;
+}
+.comment-header {
+    background-color: rgb(255, 212, 163);
+    padding: 10px 0px 10px 20px
+}
+.comment {
+    background-color: lightgoldenrodyellow;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid orangered;
+}
+.date {
+    color: #ce810d;
+}
 .content {
     margin-left: 40px;
 }
 
-.date {
-    color: #ce810d;
+/* GENERAL */
+a {
+    color: #f0a90f;
+}
+body :hover {
+    color: orangered;
+}
+h1, h2, h3, h4 {
+    font-family: 'Lobster', cursive;
 }
 
+/* BUTTONS */
 .save {
     float: right;
 }
-
-.post-form textarea, .post-form input {
-    width: 100%;
-}
-
-.post {
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.post h2 a, .post h2 a:visited {
-    color: #000000;
-}
-
-.comment {
-    margin: 20px 0px 20px 20px;
+.btn {
+    background: lightgoldenrodyellow;
+    border: 1px solid orangered;
+    border-radius: 5px;
 }

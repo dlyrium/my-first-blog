@@ -12,19 +12,31 @@
     </head>
 
     <body>
-        <div class="page-header">
+        <header class="header">
+                <ul class="title-bar">
+                    <li><a href="/"> Home</a></li>
+                    <li><h1><a href="/blog">D-Lyrium's Test Site</a></h1></li>
+                </ul>
                 {% if user.is_authenticated %}
-                    <small>
-                        <p class="top-menu">Hello, {{ user.username }}!
-                            <a href="/admin/" class="small-icon">[Admin]</a>
-                            <a href="{% url 'logout' %}" class="small-icon">[Log out]</a>
-                        </p>
-                    </small>
-                {% else %}
-                    <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-                {% endif %}            
-                <h1><a href="/">D-Lyrium's Test Site</a></h1>
-        </div>
+
+                <ul class="user-bar">
+                    <li>Hello, {{ user.username }}!</li>
+                    <li><a href="/admin/">[Admin]</a></li>
+                    <li><a href="{% url 'logout' %}">[Log out]</a></li>
+                </ul>
+
+                <ul class="post-controls">
+                    {# 'Home' will probably never have any of these. #}
+                </ul>
+
+            {% else %}
+            <ul class="user-bar">
+                <li><a href="{% url 'login' %}" class="top-menu">
+                    <span class="glyphicon glyphicon-lock"></span></a></li>
+            </ul>
+            {% endif %}
+
+        </header>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
@@ -34,6 +46,9 @@
                 </div>
             </div>
         </div>
+       
+        <footer class="footer">
+        </footer>
     </body>
 
 </html>

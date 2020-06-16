@@ -1,6 +1,5 @@
 {% load static %}
 <html>
-
     <head>
 
         <title>D-Lyrium's Blog</title>
@@ -12,22 +11,35 @@
     </head>
 
     <body>
-        <div class="page-header">
-            {% if user.is_authenticated %}
-            <small>
-                <p class="top-menu">Hello, {{ user.username }}!
-                    <a href="/admin/" class="small_icon">[Admin]</a>
-                    <a href="{% url 'logout' %}" class="small_icon">[Log out]</a>
-            <br>
-            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <a href="{% url 'post_unpub' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-            </small></p>
+        <header class="header">
+                <ul class="title-bar">
+                    <li><a href="/"> Home</a></li>
+                    <li><h1><a href="/blog">D-Lyrium's Blog</a></h1></li>
+                </ul>
+                {% if user.is_authenticated %}
+
+                <ul class="user-bar">
+                    <li>Hello, {{ user.username }}!</li>
+                    <li><a href="/admin/">[Admin]</a></li>
+                    <li><a href="{% url 'logout' %}">[Log out]</a></li>
+                </ul>
+                <ul class="post-controls">
+                        <li><a href="{% url 'post_new' %}" class="top-menu">
+                            <span class="glyphicon glyphicon-plus"></span></a></li>
+                        <li><a href="{% url 'post_unpub' %}" class="top-menu">
+                            <span class="glyphicon glyphicon-edit"></span></a></li>
+                </ul>
             {% else %}
-                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
-            {% endif %}
-            <small><a href="/"> Home</a>
-            <h1><a href="/blog">D-Lyrium's Blog</a></h1>
-        </div>
+            <ul class="user-bar">
+                <li><a href="{% url 'login' %}" class="top-menu">
+                    <span class="glyphicon glyphicon-lock"></span></a></li>
+            </ul>
+
+            {% endif %}            
+
+
+        </header>
+
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
@@ -36,6 +48,9 @@
                 </div>
             </div>
         </div>
+
+        <footer class="footer">
+        </footer>
     </body>
 
 </html>
