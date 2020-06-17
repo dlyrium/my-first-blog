@@ -1,15 +1,13 @@
 {% extends 'polls/base.html' %}
 
 {% block content  %}
-
-    {% if latest_question_list %}
-        <ul>
-            {% for question in latest_question_list %}
-                <li><a href="{% url 'polls:detail' question.id %}">{{ question }}</a></li>
-            {% endfor %}
-        </ul>
-        {% else %}
-            <p>No polls are available at the moment.
-    {% endif %}
+<section class="main">
+    {# Placeholder for design purposes. Will be replaced by actual database content in real app #}
+    <h2>Welcome to the Polls App!</h2> 
+    {% lorem 10 p random %}
+</section>
+<section class="questions">
+    {% include "polls/questions.html" %}
+</section>
 
 {% endblock  %}

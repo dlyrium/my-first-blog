@@ -51,6 +51,26 @@ header h1, header h1 a {
 }
 
 /* CONTENT */
+.content {    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.main {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid orangered;
+    width: 72%
+}
+.sidebar {
+    padding: 5px;
+    margin: 5px;
+    position: absolute;
+    right: 5;
+    border: 1px solid orangered;
+    background: rgb(252, 211, 184);
+    width: 22%;
+}
 .post-form textarea, .post-form input {
     width: 100%;
 }
